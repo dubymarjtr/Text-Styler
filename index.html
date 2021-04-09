@@ -11,10 +11,25 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <title>Frontend Starter</title>
+    <title>Text Styler</title>
   </head>
   <body>
-    <h1>Frontend Starter</h1>
+    <h1>Text Styler</h1>
+    <div class="container">
+      <div><label for="text">Enter your text:</label><input type="text" /></div>
+
+      <div>
+        <input type="range" id="font-size" min="11" max="200" />
+        <label for="font-size">Font Size</label>
+      </div>
+
+      <div>
+        <input type="color" id="color" />
+        <label for="color">Font Color</label>
+      </div>
+
+      <p></p>
+    </div>
     <script src="./scripts.js" type="module"></script>
   </body>
 </html>
