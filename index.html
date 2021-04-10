@@ -8,27 +8,32 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
     />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <title>Text Styler</title>
   </head>
   <body>
-    <h1>Text Styler</h1>
-    <div class="container">
+    <div class="container flex flex--column">
+      <h1 class="text-center">Text Styler</h1>
       <div><label for="text">Enter your text:</label><input type="text" /></div>
 
       <div>
-        <input type="range" id="font-size" min="11" max="200" />
         <label for="font-size">Font Size</label>
+        <input type="range" id="font-size" min="11" max="200" />
       </div>
 
       <div>
-        <input type="color" id="color" />
         <label for="color">Font Color</label>
+        <input type="color" id="color" />
       </div>
-
-      <p></p>
+    </div>
+    <div class="flex flex--justify-center">
+      <p>This is your text</p>
     </div>
     <script src="./scripts.js" type="module"></script>
   </body>
