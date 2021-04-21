@@ -1,4 +1,6 @@
-const p = document.querySelector("p");
+const p = document.createElement("p");
+p.innerText = "This is your text";
+document.body.appendChild(p);
 const root = document.querySelector(":root");
 
 document.querySelector("#input-text").addEventListener("keyup", (event) => {
