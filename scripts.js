@@ -3,6 +3,7 @@ p.innerText = "This is your text";
 document.body.appendChild(p);
 const root = document.querySelector(":root");
 const sizer = document.querySelector('input[type="range"]');
+const error = document.querySelector(".error");
 
 // querying the form
 const minForm = document.querySelector("#min-form");
@@ -29,11 +30,20 @@ document
 minForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const minValue = min.value;
-  sizer.min = minValue;
+
+  if (minValue < sizer.max) {
+    sizer.min = minValue;
+  } else {
+    error.innerText = "Min size cannot be greater than max size";
+  }
 });
 
 maxForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const maxValue = max.value;
-  sizer.max = maxValue;
+  if (maxValue > sizer.min) {
+    sizer.max = maxValue;
+  } else {
+    error.innerText = "Max size cannot be lower than min size";
+  }
 });
