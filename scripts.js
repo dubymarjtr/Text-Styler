@@ -2,6 +2,13 @@ const p = document.createElement("p");
 p.innerText = "This is your text";
 document.body.appendChild(p);
 const root = document.querySelector(":root");
+const sizer = document.querySelector('input[type="range"]');
+
+// querying the form
+const minForm = document.querySelector("#min-form");
+const maxForm = document.querySelector("#max-form");
+const min = document.querySelector("#min-size");
+const max = document.querySelector("#max-size");
 
 document.querySelector("#input-text").addEventListener("keyup", (event) => {
   p.innerText = event.target.value;
@@ -19,14 +26,14 @@ document
     root.style.setProperty("--font-color", `${event.target.value}`);
   });
 
-document.querySelector("#min-form").addEventListener("submit", (event) => {
+minForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const valueMin = document.querySelector("#min-size").value;
-  document.querySelector('input[type="range"]').min = valueMin;
+  const minValue = min.value;
+  sizer.min = minValue;
 });
 
-document.querySelector("#max-form").addEventListener("submit", (event) => {
+maxForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const valueMax = document.querySelector("#max-size").value;
-  document.querySelector('input[type="range"]').max = valueMax;
+  const maxValue = max.value;
+  sizer.max = maxValue;
 });
